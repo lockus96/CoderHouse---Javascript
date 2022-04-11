@@ -1,0 +1,32 @@
+body{
+    .bodyPrestamos{
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        .cajaResultados{
+            grid-area: 1 / 2 / 2 / 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: auto;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+        .cajaIngreso{
+            //cambiar a boxmodel 
+            grid-area: 1 / 1 / 2 / 2; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(17, 245, 169);
+            border-radius: 5%;
+            margin: 5%;
+            .textoCajaIngreso{
+                font-weight: bold;
+                font-family: 'Montserrat', sans-serif;
+                color: black;
+            }
+        }
+    }
+}

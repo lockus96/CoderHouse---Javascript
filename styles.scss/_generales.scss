@@ -1,0 +1,82 @@
+*{
+    padding: 0;
+    margin: 0;
+}  
+
+html{
+    height: 100%; 
+    
+    
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    background-image: url(../images/383722.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    header{
+        .header2{
+            
+            ul{
+                list-style-type: none;
+                text-decoration: none;  
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+                
+                li{
+                    font-size: 20px;
+                    &:hover{
+                        transform: scale(1.3);
+                        transition-duration: 100ms;
+                }
+            }
+        }
+    }
+        .header1{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 0.2fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+    
+            .conteinerHeader{
+                grid-area: 1 / 1 / 2 / 2;
+                display: flex;
+            }
+            .logoPrincipal{
+                grid-area: 1 / 2 / 2 / 3;
+                display: flex;
+                justify-self: center;
+                align-items: center;
+                width: 150px;
+            }
+            .buttonHomebanking{
+                grid-area: 1 / 3 / 2 / 4; 
+                display: flex;
+                background-color: aqua; 
+                justify-content: center;
+                align-items: center;
+                border-radius: 70%;
+                border-bottom: solid #1f628d 2px;
+                padding: 10px 10px 10px 10px;
+                margin-left: 75%;
+                margin-top: 20px;
+                margin-bottom: 40px;
+                border-radius: 28px;
+                margin-right: 400px;
+                width: 150px;
+                height: auto;
+                .textHomebanking{
+                    margin-bottom: 0px;
+                    $btn-font-size-lg: 10px;
+                }
+                
+              
+            }
+        }
+    }
+}
