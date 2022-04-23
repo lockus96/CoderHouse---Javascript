@@ -40,7 +40,6 @@ let btnVisualizar = document.querySelector("#visualizar");
 btnVisualizar.addEventListener("click", () => recorrerDatos());
 
 
-
 let arrayPersonas = [];
 
 
@@ -108,4 +107,34 @@ function recorrerDatos() {
 
 		document.querySelector("#cajaResultados").appendChild(container);
 	}
+}
+
+let btnSoporte = document.querySelector("#soporte");
+
+btnSoporte.addEventListener('click', ()=>{
+
+	fetch('json/supportData.json')
+        	.then((datos)=>{
+            	return datos.json()
+        	})
+	   	.then((datosJson)=>{
+			mostrarSoporte(datosJson)
+	 	})
+        	.catch((error)=>{
+            console.error(error)
+        	})
+})
+		
+function mostrarSoporte(obj){
+	const {SUPPORT_EMAIL, SUPPORT_PHONE, SUPPORT_TWITTER} = obj
+	let info = document.querySelector("#infoSoporte")
+
+	info.innerHTML = `
+		<h2>¿Necesitas ayuda?</h2>
+		<br>
+		<br>
+		<p>Email <br> ${SUPPORT_EMAIL}</p>
+		<p>WhatsApp <br> ${SUPPORT_PHONE}</p>
+		<p>Twitter <br> <a href="${SUPPORT_TWITTER}">Union Depository</a></p>
+	`
 }
