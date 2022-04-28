@@ -1,3 +1,4 @@
+//Constructor
 class Persona {
 	constructor(nombre, prestamo, motivo, cuotas) {
 		this.nombre = nombre;
@@ -14,7 +15,7 @@ class Persona {
 	}
 }
 
-
+//Constructor con datos del localStorage
 class DatosPersona {
 	constructor(obj) {
 		this.nombre = obj.nombre;
@@ -55,6 +56,7 @@ const guardarLocal = (clave, valor) => {
 	localStorage.setItem(clave, valor);
 };
 
+//Función para obtener los datos
 const obtenerInput = () => {
 	let nombreCliente = document.querySelector("#valorNombre").value;
 	let prestamoTotal = document.querySelector("#valorPrestamo").value;
@@ -64,7 +66,7 @@ const obtenerInput = () => {
 	arrayPersonas.push(new Persona(nombreCliente, prestamoTotal, motivoPrestamo, cantidadCuotas));
 	guardarLocal("listaClientes", JSON.stringify(arrayPersonas));
 
-	//cumple la funcion de evitar un doble clic
+	//Sweet Alert
 	let timerInterval
 	Swal.fire({
 		title: 'Guardando datos',
@@ -89,6 +91,7 @@ const obtenerInput = () => {
 
 };
 
+//Función para imprimir en el DOM
 function recorrerDatos() {
 	let container = document.querySelector("#cajaResultados");
 	container.innerHTML = "";
@@ -111,8 +114,8 @@ function recorrerDatos() {
 
 let btnSoporte = document.querySelector("#soporte");
 
+//AJAX
 btnSoporte.addEventListener('click', ()=>{
-
 	fetch('json/supportData.json')
         	.then((datos)=>{
             	return datos.json()
